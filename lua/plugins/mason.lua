@@ -37,7 +37,9 @@ return {
         "emmet_ls",
         "prismals",
         "pyright",
-	"taplo"
+        "taplo",
+        "rust_analyzer",
+        "nil_ls"
       },
     })
 
