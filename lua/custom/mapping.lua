@@ -1,5 +1,6 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
+vim.o.laststatus = 3
 
 -- tabs & indentation
 vim.opt.tabstop = 2 -- 2 spaces for tabs (prettier default)
