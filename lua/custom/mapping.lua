@@ -26,5 +26,7 @@ vim.keymap.set("n", "<leader>Y", [["+Y]])
 vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
 
 vim.opt.updatetime = 50
-
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+
+-- undo tree save history
+vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
