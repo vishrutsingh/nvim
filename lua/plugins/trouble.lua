@@ -1,12 +1,25 @@
 return {
   "folke/trouble.nvim",
   dependencies = { "nvim-tree/nvim-web-devicons", "folke/todo-comments.nvim" },
-  keys = {
-    { "<leader>xx", "<cmd>TroubleToggle<CR>", desc = "Open/close trouble list" },
-    { "<leader>xw", "<cmd>TroubleToggle workspace_diagnostics<CR>", desc = "Open trouble workspace diagnostics" },
-    { "<leader>xd", "<cmd>TroubleToggle document_diagnostics<CR>", desc = "Open trouble document diagnostics" },
-    { "<leader>xq", "<cmd>TroubleToggle quickfix<CR>", desc = "Open trouble quickfix list" },
-    { "<leader>xl", "<cmd>TroubleToggle loclist<CR>", desc = "Open trouble location list" },
-    { "<leader>xt", "<cmd>TodoTrouble<CR>", desc = "Open todos in trouble" },
-  },
+  config = function ()
+    require("trouble").setup()
+    vim.keymap.set("n", "<leader>xx", "<cmd>TroubleToggle<cr>",
+      {silent = true, noremap = true}
+    )
+    vim.keymap.set("n", "<leader>xw", "<cmd>TroubleToggle workspace_diagnostics<cr>",
+      {silent = true, noremap = true}
+    )
+    vim.keymap.set("n", "<leader>xd", "<cmd>TroubleToggle document_diagnostics<cr>",
+      {silent = true, noremap = true}
+    )
+    vim.keymap.set("n", "<leader>xl", "<cmd>TroubleToggle loclist<cr>",
+      {silent = true, noremap = true}
+    )
+    vim.keymap.set("n", "<leader>xq", "<cmd>TroubleToggle quickfix<cr>",
+      {silent = true, noremap = true}
+    )
+    vim.keymap.set("n", "gR", "<cmd>TroubleToggle lsp_references<cr>",
+      {silent = true, noremap = true}
+    )
+  end
 }
