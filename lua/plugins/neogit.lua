@@ -6,9 +6,9 @@ return {
       "nvim-telescope/telescope.nvim", -- optional
     },
     config = function ()
-      local neogit = require('neogit')
+      require('neogit').setup()
 
-      vim.keymap.set("n", "<leader>gs", neogit.open,
+      vim.keymap.set("n", "<leader>gs", require('neogit').open,
         {silent = true, noremap = true}
       )
 
