@@ -9,14 +9,30 @@ return {
   event = "VeryLazy",
   config = function()
     require("chatgpt").setup({})
+    local chatgpt = require("chatgpt")
+    local wk = require("which-key")
+    wk.register({
+      p = {
+        name = "ChatGPT",
+        e = {
+          function()
+            chatgpt.edit_with_instructions()
+          end,
+          "Edit with instructions",
+        },
+      },
+    }, {
+        prefix = "<leader>",
+        mode = "v",
+      })
     openai_params = {
-        model = "gpt-4",
-        frequency_penalty = 0,
-        presence_penalty = 0,
-        max_tokens = 4095,
-        temperature = 0.2,
-        top_p = 0.1,
-        n = 1,
-      }
+      model = "gpt-4",
+      frequency_penalty = 0,
+      presence_penalty = 0,
+      max_tokens = 4095,
+      temperature = 0.2,
+      top_p = 0.1,
+      n = 1,
+    }
   end
 }
