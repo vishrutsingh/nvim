@@ -107,11 +107,18 @@ return {
           filetypes = { "graphql", "gql", "svelte", "typescriptreact", "javascriptreact" },
         })
       end,
-      ["emmet_ls"] = function()
+      -- ["emmet_ls"] = function()
+      --   -- configure emmet language server
+      --   lspconfig["emmet_ls"].setup({
+      --     capabilities = capabilities,
+      --     filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
+      --   })
+      -- end,
+      ["denols"] = function()
         -- configure emmet language server
-        lspconfig["emmet_ls"].setup({
+        lspconfig["denols"].setup({
           capabilities = capabilities,
-          filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
+          filetypes = { "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
         })
       end,
       ["lua_ls"] = function()
