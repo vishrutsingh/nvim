@@ -118,7 +118,7 @@ return {
         -- configure emmet language server
         lspconfig["denols"].setup({
           capabilities = capabilities,
-          filetypes = { "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
+          filetypes = { "typescript", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
         })
       end,
       ["lua_ls"] = function()
