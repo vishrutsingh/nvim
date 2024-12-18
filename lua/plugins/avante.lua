@@ -50,8 +50,8 @@ return {
       auto_suggestions_provider = "openai", -- Since auto-suggestions are a high-frequency operation and therefore expensive, it is recommended to specify an inexpensive provider or even a free provider: copilot
       openai = {
         model = "gpt-4o",
-        temperature = 0.2,
         max_tokens = 16000,
+        temperature = 0.001
       },
       ---Specify the special dual_boost mode
       ---1. enabled: Whether to enable dual_boost mode. Default to false.
@@ -66,7 +66,6 @@ return {
         enabled = false,
         first_provider = "openai",
         second_provider = "claude",
-        prompt = "Based on the two reference outputs below, generate a response that incorporates elements from both but reflects your own judgment and unique perspective. Do not provide any explanation, just give the response directly. Reference Output 1: [{{provider1_output}}], Reference Output 2: [{{provider2_output}}]",
         timeout = 60000, -- Timeout in milliseconds
       },
       behaviour = {

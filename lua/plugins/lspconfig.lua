@@ -115,10 +115,23 @@ return {
       --   })
       -- end,
       ["denols"] = function()
-        -- configure emmet language server
+        local util = require 'lspconfig.util'
         lspconfig["denols"].setup({
           capabilities = capabilities,
           filetypes = { "typescript", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
+          root_dir = util.root_pattern('deno.json', 'deno.jsonc', '.git'),
+          settings = {
+            deno = {
+              enable = true,
+              suggest = {
+                imports = {
+                  hosts = {
+                    ['https://deno.land'] = true,
+                  },
+                },
+              },
+            },
+          },
         })
       end,
       ["lua_ls"] = function()
