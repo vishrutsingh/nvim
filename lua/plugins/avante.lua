@@ -46,12 +46,18 @@ return {
   config = function ()
     require("avante").setup({
       ---@alias Provider "claude" | "openai" | "azure" | "gemini" | "cohere" | "copilot" | string
-      provider = "openai", -- Recommend using Claude
-      auto_suggestions_provider = "openai", -- Since auto-suggestions are a high-frequency operation and therefore expensive, it is recommended to specify an inexpensive provider or even a free provider: copilot
+      provider = "claude", -- Recommend using Claude
+      auto_suggestions_provider = "claude", -- Since auto-suggestions are a high-frequency operation and therefore expensive, it is recommended to specify an inexpensive provider or even a free provider: copilot
       openai = {
         model = "gpt-4o",
-        max_tokens = 16000,
+        max_tokens = 15999,
         temperature = 0.001
+      },
+      claude = {
+        endpoint = "https://api.anthropic.com",
+        model = "claude-3-7-sonnet-20250219",
+        temperature = 0,
+        max_tokens = 15000,
       },
       ---Specify the special dual_boost mode
       ---1. enabled: Whether to enable dual_boost mode. Default to false.

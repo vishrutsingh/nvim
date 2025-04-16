@@ -13,8 +13,9 @@ vim.o.number = true
 vim.opt.wrap = false
 
 --search
-vim.opt.hlsearch = false
 vim.opt.incsearch = true
+-- Clear search highlighting
+vim.keymap.set("n", "<leader>nh", ":nohlsearch<CR>", { silent = true, noremap = true, desc = "Clear Search Highlight" })
 
 --scroll
 vim.opt.scrolloff = 8
