@@ -80,7 +80,23 @@ return {
       vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
     end
 
-    mason_lspconfig.setup_handlers({
+    -- Setup mason-lspconfig with handlers
+    mason_lspconfig.setup({
+      ensure_installed = {
+        "html",
+        "cssls",
+        "tailwindcss",
+        "svelte",
+        "lua_ls",
+        "graphql",
+        "emmet_ls",
+        "prismals",
+        "pyright",
+        "taplo",
+        "rust_analyzer",
+        "nil_ls"
+      },
+      handlers = {
       -- default handler for installed servers
       function(server_name)
         lspconfig[server_name].setup({
@@ -153,6 +169,7 @@ return {
           },
         })
       end,
+      }
     })
   end,
 }
